@@ -57,6 +57,6 @@ class Main extends PluginBase {
     $form->sendToPlayer($player);
           return $form;   
 
-      }
+  }
   
 }
