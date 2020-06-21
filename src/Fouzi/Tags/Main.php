@@ -55,7 +55,8 @@ class Main extends PluginBase {
     $form->addButton("§f[§4OG§f]");
     $form->addButton("§f[§2Quick§aDropper§f]");
     $form->sendToPlayer($player);
-          return $form;    
+          return $form;   
+
       }
   
 }
