@@ -22,4 +22,40 @@ class Main extends PluginBase {
   {
     $this->getLogger()->info(TF::RED . "Bruh you just disabled TagsUI of fouzi, you suck");
   }
+  
+  public function onCommand(CommandSender $sender, Command $command, string $Label, array $args){
+    if(!sender instanceof Player){
+      $sender->sendMessage(TF::GREEN . "WTF Are you even a player to run this command? Smh");
+    }
+    switch ($command->getName()) {
+      case "tagsui":
+        $this->openTagsForm($sender);
+      break;
+    }
+    return true;
+  }
+  
+  public function openTagsForm($player){
+    
+    $form = new SimpleForm(function (Player $player, $data) {
+      $result = $data;
+      if($result === null){
+        return true;
+      }
+      switch($result){
+        case 0:
+          $player->setDisplayName("§f[§4OG§f] " . $player->getName());
+        break;
+        case 1:
+          $player->setDisplayName("§f[§2Quick§aDropper§f] " . $player->getName());
+        break;
+      }
+    });
+    $form->setTitle("TagsUI");
+    $form->addButton("§f[§4OG§f]");
+    $form->addButton("§f[§2Quick§aDropper§f]");
+    $form->sendToPlayer($player);
+          return $form;    
+      }
+  
 }
