@@ -15,7 +15,6 @@ class Main extends PluginBase {
   public function onEnable()
   {
     $this->getLogger()->info(TF::BLUE . "Tags by iiFouzi is enabled, make sure to drop a follow in www.github.com/iiFouzi");
-    $this->getServer()->getPluginManager()->getPlugin("FormAPI");
   }
   
   public function onDisable()
